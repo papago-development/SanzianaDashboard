@@ -1,0 +1,76 @@
+<section fxLayout="row wrap" fxLayoutAlign="center center" style="margin-top: 20px">
+  <mat-card fxFlex="500px" fxFlex.xs="100%">
+    <mat-card-title>Creeaza o noua mancare</mat-card-title>
+    <form [formGroup]="itemForm" autocomplete="off" novalidate (ngSubmit)="createItem(itemForm.value)" fxLayout="column wrap"
+          fxLayoutAlign="center center" fxLayoutGap="10px">
+
+      <mat-card-content>
+        <mat-form-field>
+          <input matInput type="text" placeholder="Numele Felului de mancare" formControlName="nume" id="nume">
+          <mat-hint align="end">Nu mai mult de 60 de caractere.</mat-hint>
+          <mat-error *ngIf="hasError('nume', 'required')">Numele este obligatoriu</mat-error>
+          <mat-error *ngIf="hasError('nume', 'maxlength')">Sunt mai mult de 60 de caractere</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker" placeholder="Alege o data pentru acest fel" formControlName="available" id="available"
+                 readonly (click)="picker.open()">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <!--<mat-form-field>-->
+          <!--<input matInput type="text" placeholder="Owner's address" formControlName="address">-->
+          <!--<mat-hint align="end">Not more then 100 characters long.</mat-hint>-->
+          <!--<mat-error *ngIf="hasError('address', 'required')">Address is required</mat-error>-->
+          <!--<mat-error *ngIf="hasError('address', 'maxlength')">You have more than 100 characters</mat-error>-->
+        <!--</mat-form-field>-->
+
+        <mat-form-field>
+          <input matInput type="number" placeholder="Pretul" formControlName="pret">
+          <mat-hint align="end">Pretul poate fi exprimat cu zecimale.</mat-hint>
+          <!--<mat-error *ngIf="hasError('address', 'required')">Address is required</mat-error>-->
+          <!--<mat-error *ngIf="hasError('address', 'maxlength')">You have more than 100 characters</mat-error>-->
+        </mat-form-field>
+        <section fxLayout="row wrap" fxLayoutAlign="space-around  start" style="margin-top: 20px">
+          <mat-card fxFlex.xs="100%">
+            <mat-card-header style="background-color: aliceblue; justify-content: center;">
+               <mat-card-title style="font-size: small; background-color:  aliceblue; margin-top: 8px;">Categoria</mat-card-title>
+            </mat-card-header>
+            <mat-radio-group style="margin-top: 8px" class="example-radio-group" formControlName="categoria">
+              <mat-radio-button class="example-radio-button"  value="Ciorbe">Ciorbe</mat-radio-button>
+              <mat-radio-button class="example-radio-button"  value="Garnituri">Garnituri</mat-radio-button>
+              <mat-radio-button class="example-radio-button"  value="FelPrincipal">Fel Principal</mat-radio-button>
+              <mat-radio-button class="example-radio-button"  value="Minuturi">Minuturi</mat-radio-button>
+              <mat-radio-button class="example-radio-button"  value="Salate">Salate</mat-radio-button>
+              <mat-radio-button class="example-radio-button"  value="Desert">Desert</mat-radio-button>
+            </mat-radio-group>
+          </mat-card>
+          <mat-card fxFlex.xs="100%">
+            <mat-card-header style="background-color: aliceblue; justify-content: center;">
+              <mat-card-title style="font-size: small; margin-top: 8px;">Meniu Fix</mat-card-title>
+            </mat-card-header>
+            <mat-radio-group style="margin-top: 8px" class="example-radio-group" formControlName="fix">
+              <mat-radio-button class="example-radio-button"  value="Meniu la alegere">Meniu la alegere</mat-radio-button>
+              <mat-radio-button class="example-radio-button"  value="Meniu Extra">Meniu Extra</mat-radio-button>
+            </mat-radio-group>
+          </mat-card>
+        </section>
+        <mat-selection-list #shoes formControlName='meniu'>
+          <mat-list-option value="Meniu Standard">Meniu Standard</mat-list-option>
+          <mat-list-option value="Meniu la alegere">Meniu la alegere</mat-list-option>
+          <mat-list-option value="Meniu Extra">Meniu Extra</mat-list-option>
+        </mat-selection-list>
+
+
+      </mat-card-content>
+
+      <mat-card-actions>
+        <mat-card-actions align="center">
+          <button mat-raised-button color="primary" [disabled]="!itemForm.valid">Creeaza</button>
+          <button type="button" mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+        </mat-card-actions>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</section>

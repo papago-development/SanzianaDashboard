@@ -1,0 +1,56 @@
+.example-form {
+  min-width: 150px;
+  max-width: 1000px;
+  width: 100%;
+  /*margin-top: 100px;*/
+  /*margin-left: 40px;*/
+}
+
+.example-half-width {
+  width: 45%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.example-full-width:nth-last-child() {
+  margin-bottom: 10px;
+}
+
+.input{
+  margin-left: 60px;
+}
+
+.button-row {
+  margin: 10px 0;
+}
+.white-icon {
+  color: purple;
+}
+/* Note: If you're using an SVG icon, you should make the class target the `<svg>` element */
+.white-icon svg {
+  fill: purple;
+}
+
+mat-form-field{
+  width: 600px;
+}
+
+mat-card-title{
+  text-align: center;
+}
+
+.example-radio-group {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.example-radio-button {
+  margin: 5px;
+}
+
+.example-selected-value {
+  margin: 15px 0;
+}
+

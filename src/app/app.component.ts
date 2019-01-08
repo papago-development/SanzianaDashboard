@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  categories = [{nume: 'Ciorbe'}, {nume: 'Garnituri'}, {nume: 'FelPrincipal'}, {nume: 'Minuturi'}, {nume: 'Salate'}, {nume: 'Desert'}];
 }
