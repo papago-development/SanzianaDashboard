@@ -38,14 +38,19 @@ import 'rxjs';
 import { FelCreateComponent } from './fel-create/fel-create.component';
 import { ItemCreateComponent } from './item-create/item-create.component';
 import { ListFelComponent } from './list-fel/list-fel.component';
+import { MeniuLaAlegereEditComponent } from './meniu-la-alegere-edit/meniu-la-alegere-edit.component';
+import { MeniuExtraComponent } from './meniu-extra/meniu-extra.component';
+import { MeniuExtraEditComponent } from './meniu-extra-edit/meniu-extra-edit.component';
 
 
 const appRoutes: Routes = [
   { path: '', component: MeniuStandardComponent, data: { title: 'Meniu Standard Component' } },
   { path: 'meniustandard', component: MeniuStandardComponent, data: { title: 'Meniu Standard Component' } },
-  { path: 'meniulaalegere', component: MeniuLaAlegereComponent, data: { title: 'Meniu Standard Component' } },
-  { path: 'meniuextra', component: MeniuStandardComponent, data: { title: 'Meniu Standard Component' } },
+  { path: 'meniulaalegere', component: MeniuLaAlegereComponent, data: { title: 'Meniu La Alegere ' } },
+  { path: 'meniuextra', component: MeniuExtraComponent, data: { title: 'Meniu Standard Component' } },
   { path: 'meniustandard-edit', component: MeniuStandardEditComponent, data: { title: 'Edit Meniu Standard Component' } },
+  { path: 'meniulaalegere-edit', component: MeniuLaAlegereEditComponent, data: { title: 'Edit Meniu Standard Component' } },
+  { path: 'meniuextra-edit', component: MeniuExtraEditComponent, data: { title: 'Edit Meniu Standard Component' } },
   { path: 'ciorbe', component: CiorbeComponent, data: { title: 'Second Component' } },
   {
     path: 'item-details/:nume',
@@ -75,7 +80,10 @@ const appRoutes: Routes = [
     ItemDetailComponent,
     FelCreateComponent,
     ItemCreateComponent,
-    ListFelComponent
+    ListFelComponent,
+    MeniuLaAlegereEditComponent,
+    MeniuExtraComponent,
+    MeniuExtraEditComponent
   ],
   imports: [
     BrowserModule,

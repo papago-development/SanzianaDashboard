@@ -31,7 +31,7 @@ export class FsService {
 
   getMeniuLAlegere(): Observable<any> {
     return new Observable((observer) => {
-      this.afs.collection('Meniuri').ref.doc('Meniu1').get().then((doc) => {
+      this.afs.collection('Meniuri').ref.doc('Meniu la alegere').get().then((doc) => {
         const data = doc.data();
         // console.log(data);
         observer.next({
@@ -41,6 +41,25 @@ export class FsService {
           felPrincipal: data.felPrincipal,
           garnitura: data.garnitura,
           salata: data.salata,
+          tcp: data.tcp,
+          pret: data.pret
+        });
+      });
+    });
+  }
+
+  getMeniuExtra(): Observable<any> {
+    return new Observable((observer) => {
+      this.afs.collection('Meniuri').ref.doc('Meniu Extra').get().then((doc) => {
+        const data = doc.data();
+        // console.log(data);
+        observer.next({
+          nume: data.nume,
+          descriere: data.descriere,
+          minut: data.minut,
+          garnitura: data.garnitura,
+          salata: data.salata,
+          desert: data.desert,
           tcp: data.tcp,
           pret: data.pret
         });

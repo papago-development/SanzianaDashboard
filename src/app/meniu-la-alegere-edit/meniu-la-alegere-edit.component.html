@@ -1,0 +1,64 @@
+<section fxLayout="row wrap" fxLayoutAlign="center center" style="margin-top: 20px">
+  <mat-card fxFlex="500px" fxFlex.xs="100%">
+    <mat-card-title>Editeaza Meniul Standard</mat-card-title>
+    <form class= 'example-form' [formGroup]="meniuForm" (ngSubmit)="onFormSubmit(meniuForm.value)">
+      <div fxLayout="row" fxLayoutAlign="space-between center" >
+        <mat-form-field class="example-half-width">
+          <input matInput placeholder="Numele Meniului" formControlName="nume">
+        </mat-form-field>
+
+        <mat-form-field class="example-half-width">
+          <textarea  placeholder="Descriere Meniului" matInput  formControlName="descriere"></textarea>
+        </mat-form-field>
+      </div>
+      <!--<mat-form-field class="example-full-width">-->
+      <!--<input matInput placeholder="Author" formControlName="author"-->
+      <!--[errorStateMatcher]="matcher">-->
+      <!--<mat-error>-->
+      <!--<span *ngIf="!meniuForm.get('pret').valid && meniuForm.get('pret').touched">Please enter Book Author</span>-->
+      <!--</mat-error>-->
+      <!--</mat-form-field>-->
+      <div fxLayout="row" fxLayoutAlign="space-between center" >
+        <mat-form-field class="example-half-width">
+          <input matInput placeholder="Ciorba" formControlName="ciorba.nume">
+        </mat-form-field>
+        <mat-form-field class="example-half-width">
+          <input  placeholder="Pret Ciorba" matInput  formControlName="ciorba.pret" type="number">
+
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="space-between center" >
+        <mat-form-field class="example-half-width">
+          <input matInput placeholder="Fel Principal" formControlName="felPrincipal.nume">
+        </mat-form-field>
+        <mat-form-field class="example-half-width">
+          <input matInput placeholder="Pret Fel Principal" formControlName="felPrincipal.pret" type="number">
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="space-between center" >
+        <mat-form-field class="example-half-width">
+          <input matInput placeholder="Garnitura" formControlName="garnitura.nume">
+        </mat-form-field>
+        <mat-form-field class="example-half-width">
+          <input  placeholder="Pret Garnitura" matInput  formControlName="garnitura.pret" type="number">
+
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="space-between center" >
+        <mat-form-field class="example-half-width">
+          <input matInput placeholder="Salata" formControlName="salata.nume">
+        </mat-form-field>
+        <mat-form-field class="example-half-width">
+          <input  placeholder="Pret Salata" matInput  formControlName="salata.pret" type="number">
+
+        </mat-form-field>
+      </div>
+      <div>
+        <button type="submit" [disabled]="!meniuForm.valid" mat-button mat-fab style="-webkit-text-fill-color:purple"><mat-icon>save</mat-icon></button>
+      </div>
+    </form>
+  </mat-card>
+</section>

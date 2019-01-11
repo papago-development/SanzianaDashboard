@@ -6,18 +6,18 @@
 
   <mat-card-content>
     <dl>
-      <dt>Ciorba:</dt>
-      <dd>{{meniu.ciorba.nume}}</dd>
-      <dt>Fel Principal:</dt>
-      <dd>{{meniu.felPrincipal.nume}}</dd>
+      <dt>Minut:</dt>
+      <dd>{{meniu.minut.nume}}</dd>
       <dt>Garnitura:</dt>
       <dd>{{meniu.garnitura.nume}}</dd>
-      <dt>Salata:</dt>
+      <dt>Sarnitura:</dt>
       <dd>{{meniu.salata.nume}}</dd>
+      <dt>Desert:</dt>
+      <dd>{{meniu.desert.nume}}</dd>
     </dl>
   </mat-card-content>
 
   <mat-card-actions>
-    <a mat-fab color="primary" [routerLink]="['/meniulaalegere-edit']"><mat-icon>edit</mat-icon></a>
+    <a mat-fab color="primary" [routerLink]="['/meniuextra-edit']"><mat-icon>edit</mat-icon></a>
   </mat-card-actions>
 </mat-card>

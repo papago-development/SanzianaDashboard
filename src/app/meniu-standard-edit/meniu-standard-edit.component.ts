@@ -38,7 +38,6 @@ export class MeniuStandardEditComponent implements OnInit {
         'ciorba.pret': data.ciorba.pret,
         'felPrincipal.nume': data.felPrincipal.nume,
         'felPrincipal.pret': data.felPrincipal.pret,
-
       });
     });
   }
